@@ -7,14 +7,13 @@ interface CatalogItemProps {
     product: IProduct
 }
 
-
 export const CatalogItem: React.FC<CatalogItemProps> = ({ product } ) => {
 
     const dispatch = useDispatch()
     
     const handleAddProductToCart = useCallback(() => {
         dispatch(addProductToCart(product))
-    }, [dispatch])
+    }, [dispatch, product])
 
     return (
         <article>
